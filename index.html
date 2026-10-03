@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorer | Descubra São Paulo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    
+    <!-- Navbar (Glassmorphism) -->
+    <nav class="navbar">
+        <div class="logo">
+            <i data-lucide="map"></i>
+            <span>ExplorerSP</span>
+        </div>
+        <div class="search-bar">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" placeholder="Para onde em São Paulo?">
+        </div>
+        <div class="nav-actions">
+            <button class="icon-btn"><i data-lucide="map-pin"></i></button>
+            <button class="icon-btn"><i data-lucide="heart"></i></button>
+            <div class="profile-avatar"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Descubra o coração de <br><span class="highlight">São Paulo</span></h1>
+            <p>De clássicos arquitetônicos às melhores padarias de esquina. Encontre sua próxima parada.</p>
+            
+            <!-- Filters (Chips) -->
+            <div class="filters" id="filters-container">
+                <button class="chip active" data-filter="all">Todos</button>
+                <button class="chip" data-filter="turismo"><i data-lucide="camera"></i> Turístico</button>
+                <button class="chip" data-filter="restaurante"><i data-lucide="utensils"></i> Restaurantes</button>
+                <button class="chip" data-filter="padaria"><i data-lucide="coffee"></i> Padarias</button>
+                <button class="chip" data-filter="hospedagem"><i data-lucide="bed"></i> Hospedagens</button>
+                <button class="chip" data-filter="cultural"><i data-lucide="ticket"></i> Cultural</button>
+            </div>
+        </header>
+
+        <!-- Content Grid -->
+        <section class="destinations-section">
+            <div class="section-header">
+                <h2>Lugares em destaque</h2>
+                <button class="text-btn">Ver no mapa <i data-lucide="chevron-right"></i></button>
+            </div>
+            
+            <div class="grid" id="destinations-grid">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-fab" id="chat-fab">
+            <i data-lucide="message-circle"></i>
+        </button>
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-agent-info">
+                    <div class="chat-avatar"></div>
+                    <div>
+                        <h4>Atendimento</h4>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="close-chat" id="close-chat"><i data-lucide="x"></i></button>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    <p>Olá! Como posso te ajudar a descobrir São Paulo hoje?</p>
+                    <span class="msg-time">14:02</span>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" placeholder="Digite sua mensagem...">
+                <button class="send-btn"><i data-lucide="send"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
